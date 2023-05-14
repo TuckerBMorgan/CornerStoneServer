@@ -8,6 +8,7 @@
         "moduleResolution": "classic",
         "allowArbitraryExtensions": true,
         "allowImportingTsExtensions": true,
+        "moduleDetection": "force",
         "noEmit": true,
         "types": []
     },

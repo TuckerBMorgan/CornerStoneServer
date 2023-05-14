@@ -1,0 +1,19 @@
+{
+    "compilerOptions": {
+        "strict": true,
+        "lib": ["esnext"],
+        "jsx": "react", // the deno transpiler supports jsx syntax, so why not; would need a custom jsx library to utilize, though!
+        // These approximate deno module resolution behavior, but aren't perfect. It's probably good enough for most scenarios, though.
+        "module": "esnext",
+        "moduleResolution": "classic",
+        "allowArbitraryExtensions": true,
+        "allowImportingTsExtensions": true,
+        "moduleDetection": "force",
+        "noEmit": true,
+        "types": []
+    },
+    "include": [
+        "events/**/*.ts",
+        "./runtime.d.ts" // TODO: generate from rust bindings/provided environment
+    ]
+}

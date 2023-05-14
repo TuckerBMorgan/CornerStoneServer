@@ -1,0 +1,1 @@
+The `tsconfig.json` and `package.json` (and any installed js packages) are for editor/typechecking support, nothing more.

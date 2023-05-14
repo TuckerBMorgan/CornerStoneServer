@@ -19,16 +19,20 @@ impl GameState {
         event.execute(self)
     }
 
-    pub fn queue_event(mut self, event: impl Event + 'static) -> GameState{
+    pub fn queue_event(mut self, event: impl Event + 'static) -> GameState {
         self.pending_events.push(Box::new(event));
         self
     }
 
-    pub fn drain_event_queue(mut self) {
+    pub fn drain_event_queue(mut self) -> Vec<String> {
+        let mut messages_to_return = vec![];
         while self.pending_events.len() > 0 {
             let most_recent_event = self.pending_events.remove(0);
+            messages_to_return.push(most_recent_event.to_json());
             self = self.execute_event(most_recent_event);
         }
+
+        messages_to_return
     }
 
     pub fn add_controller(&mut self, controller: Controller) {

@@ -26,11 +26,15 @@ body {
   border-color: black;
   border-radius: 4px;
   border-style: solid;
-  height: 400px;
-  width: 400px;
+  height: 300px;
+  width: 300px;
   position: relative;
   display: inline-block;
   overflow: hidden;
+}
+
+.card > h1 {
+  font-size: 18px;
 }
 
 .card-name {
@@ -64,6 +68,27 @@ body {
   top: 0;
 }
 
+.card-kind {
+  writing-mode: vertical-lr;
+  text-orientation: upright;
+  margin-right: -2px;
+  border-color: black;
+  border-radius: 4px;
+  border-style: solid;
+}
+
+.card-kind-container {
+  float: right;
+  display: flex;
+  flex-direction: row-reverse;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+
 .rules-text-container {
   float: left;
   display: flex;
@@ -82,7 +107,7 @@ body {
 }
 
 .smaller-text {
-  font-size: 8px;
+  font-size: 7px;
 }
 
 .cost-container {

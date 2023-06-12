@@ -11,7 +11,7 @@ createDecklist(
         power: 2,
         resilience: 1,
         movement: 1,
-        extraRulesText: "When this unit retreats, create a 1/2/1 'Frozen Corpse' at its position."
+        extraRulesText: "When this unit retreats, create a 1/1/1 'Frozen Corpse' at its position."
     }),
     card,
     card = register({
@@ -79,6 +79,8 @@ createDecklist(
         kind: CardKind.Action,
         cost: 9,
         name: "Forced March",
-        extraRulesText: "This costs 1 less supply for each friendly unit you control. Deploy two 'Frozen Infantryman'. Move all friendly units 1 position in the same direction of your choosing."
+        extraRulesText: `This costs 1 less supply for each friendly unit you control.
+Quick: Deploy two 'Frozen Infantryman'. Your units take no resilience damage during the movement, deployment, or action phases of this turn.
+Action: Move all friendly units 2 positions in the same direction of your choosing.`
     })
 );

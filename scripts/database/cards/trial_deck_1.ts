@@ -17,8 +17,8 @@ createDecklist(
         kind: CardKind.Unit,
         cost: 1,
         name: "Engineer Corp.",
-        resilience: 1,
         power: 1,
+        resilience: 1,
         movement: 1,
         extraRulesText: "Infrastructure costs 1 less supply to build."
     }),
@@ -27,8 +27,8 @@ createDecklist(
         kind: CardKind.Unit,
         cost: 1,
         name: "Self-Defense Squadron",
-        resilience: 2,
         power: 2,
+        resilience: 3,
         movement: 1,
         extraRulesText: "",
     }),
@@ -37,8 +37,8 @@ createDecklist(
         kind: CardKind.Unit,
         cost: 2,
         name: "Forward Scouts",
-        resilience: 3,
         power: 1,
+        resilience: 3,
         movement: 3,
         extraRulesText: "",
     }),
@@ -48,7 +48,7 @@ createDecklist(
         kind: CardKind.Action,
         cost: 2,
         name: "Precision Support Strike",
-        extraRulesText: "3 damage to target position. Adjacent units take 1 damage and are knocked 1 space farther away from the impact."
+        extraRulesText: "3 damage to target position. Adjacent enemy units take 1 damage and are knocked 1 space farther away from the impact."
     }),
     card,
     card = register({
@@ -56,7 +56,7 @@ createDecklist(
         kind: CardKind.Infrastructure,
         cost: 3,
         name: "Machine-gun Emplacement",
-        resilience: 5,
+        resilience: 4,
         extraRulesText: "Quick: At the beginning of each turn, this does 1 damage to every adjacent enemy unit."
     }),
     card,
@@ -65,8 +65,8 @@ createDecklist(
         kind: CardKind.Infrastructure,
         cost: 5,
         name: "Artillery Emplacement",
-        resilience: 7,
-        extraRulesText: "Quick: At the beginning of each turn, this does 2 damage to a position of your choosing, and 1 damage to adjacent positions."
+        resilience: 6,
+        extraRulesText: "Quick: At the beginning of each turn, this does 1 damage to target position and all adjacent positions."
     }),
     card,
     card = register({
@@ -74,6 +74,6 @@ createDecklist(
         kind: CardKind.Action,
         cost: 9,
         name: "Coordinated Bombardment",
-        extraRulesText: "This costs 1 less supply for each infrastructure you control. Copy this action for each infrastructure you control. Deal 3 damage to target position and all adjacent positions."
+        extraRulesText: "This costs 1 less supply for each infrastructure you control. Copy this action for each infrastructure you control. Deal 1 damage to target position and all adjacent positions."
     })
 );

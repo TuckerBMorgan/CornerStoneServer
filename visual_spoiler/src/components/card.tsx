@@ -25,7 +25,8 @@ export const Card = component$((props: {card: CardDescriptor}) => {
         <h1 class="card-name">{card.name}</h1>
         {cost}
         {card.groupIdentity ? <div class="group-identity-container"><p class="group-identity">{card.groupIdentity}</p></div> : ""}
-        {card.extraRulesText ? <div class="rules-text-container"><div class={`rules-text ${card.extraRulesText.split("\n").length > 10 ? "smaller-text" : ""}`} dangerouslySetInnerHTML={marked(card.extraRulesText, {mangle: false, headerIds: false, gfm: true})}></div></div> : ""}
+        <div class="card-kind-container"><p class="card-kind">{card.kind}</p></div>
+        {card.extraRulesText ? <div class="rules-text-container"><div class={`rules-text ${card.extraRulesText.split("\n").length >= 6 ? "smaller-text" : ""}`} dangerouslySetInnerHTML={marked(card.extraRulesText, {mangle: false, headerIds: false, gfm: true})}></div></div> : ""}
         {power}{resilience}{movement}
     </div>
     </>

@@ -35,7 +35,7 @@ export interface InfrastructreCardDescriptor extends CardDescriptorBase {
     kind: CardKind.Infrastructure;
     resilience: number;
 }
-export enum CardKind { Infrastructure = "infrastructure" }
+export enum CardKind { Infrastructure = "infra" }
 export interface CardDescriptorRegistry { [CardKind.Infrastructure]: InfrastructreCardDescriptor }
 
 

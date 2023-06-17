@@ -37,7 +37,7 @@ until a player has been forced off the battlefield or a stalemate is declared.`
     cost: 0,
     name: `Turn Resolution 1/2`,
     extraRulesText: `
-First, any quick effects happen, in the same order non-quick effects do: movement, deployment, then other effects.
+First, any quick effects happen - quick special effects (start of turn), then queued quick movements, then queued quick deployments.
 
 Then units move. All units advance/clash one tile at a time. All submitted movements occur "simultaneously". If a unit attempts to move into an occupied space, or the same space as another unit, one of two things happen:
   - If the units are all controlled by the same player, the unit with the greatest cost, then the greatest power,
@@ -59,9 +59,25 @@ New units and infrastructure are then deployed to the battlefield.
   - Units which deploy to a space occupied by an enemy unit immediately clash.
   - If they do not force the enemy to retreat, the deployment fails.
   - If the deployment was from a unit card, the unit card is returned to the player's hand.
-Finally, non-quick actions occur. These are "simultaneous", in the same order they resolve in the turn.
-  - Movements, deployments, then other effects.
+Finally, non-quick actions occur. These are "simultaneous", in the same order they resolve in the "quick" effect step.
+  - action-based special effects, queued movements, queued deployments.
   - Units may retreat and infrastructure may be destroyed both as resilience changes occur and as a result of movement clashes.`
+  }),
+  register({
+    kind: CardKind.Rules,
+    cost: 0,
+    name: `Conflicting Forced Movement`,
+    extraRulesText: `
+During both quick effects and normal action phases, a unit may be affected by multiple forced movement effects.
+In such a scenario, the net movement is summed (one left + one right = no movement, for example).
+Then, movement is executed one step at a time for each affected unit (as with turn movement), in the following directional priority:
+ - Away from the owning player
+ - Towards the owning player
+ - The owning player's left
+ - The owning player's right
+Lost clashes may stop this movement at any step, and negate the remainder of the movement. Collision with an allied unit or
+infrastructure will likewise stop the movement early.
+If forced movement is stopped by the edge of the battlefield, the unit stopped takes 1 damage.`
   }),
   register({
     kind: CardKind.Rules,
@@ -97,7 +113,6 @@ Finally, non-quick actions occur. These are "simultaneous", in the same order th
     name: "This card intentionally left blank",
     extraRulesText: ""
   }),
-  noop,
   noop,
   noop,
   noop,

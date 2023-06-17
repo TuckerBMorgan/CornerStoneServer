@@ -26,11 +26,11 @@ createDecklist(
     card = register({
         kind: CardKind.Unit,
         cost: 1,
-        name: "Self-Defense Squadron",
-        power: 2,
+        name: "Trench Diggers",
+        power: 1,
         resilience: 3,
-        movement: 1,
-        extraRulesText: "",
+        movement: 2,
+        extraRulesText: "When this is deployed, create a 1/1 'Barbed Trench' infrastructure in both the tiles to the left and right of it. _(This occurs during action-based deployments)_",
     }),
     card,
     card = register({
@@ -57,7 +57,7 @@ createDecklist(
         cost: 3,
         name: "Machine-gun Emplacement",
         resilience: 4,
-        extraRulesText: "Quick: At the beginning of each turn, this does 1 damage to every adjacent enemy unit."
+        extraRulesText: "Quick: At the beginning of each turn, this does 2 damage to every adjacent enemy unit and diagonally adjacent unit."
     }),
     card,
     card = register({
@@ -66,7 +66,7 @@ createDecklist(
         cost: 5,
         name: "Artillery Emplacement",
         resilience: 6,
-        extraRulesText: "Quick: At the beginning of each turn, this does 1 damage to target position and all adjacent positions."
+        extraRulesText: "Quick: At the beginning of each turn, this does 3 damage to target position and 1 damage to all adjacent positions."
     }),
     card,
     card = register({
